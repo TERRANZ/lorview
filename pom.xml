@@ -35,6 +35,22 @@
             <artifactId>${swt.platform}</artifactId>
             <version>4.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.40.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-htmlunit-driver</artifactId>
+            <version>2.40.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -60,7 +76,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>ru.terra.lorview.Main</mainClass>
+                            <mainClass>ru.terra.lorview.gui.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -77,12 +93,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>
-                    org.apache.maven.plugins
-                </groupId>
-                <artifactId>
-                    maven-compiler-plugin
-                </artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
