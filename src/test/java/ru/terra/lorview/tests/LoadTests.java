@@ -5,6 +5,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import ru.terra.lorview.dto.ForumItemDTO;
+import ru.terra.lorview.dto.TrackerItemDTO;
 import ru.terra.lorview.parser.Parser;
 import ru.terra.lorview.parser.ParserException;
 import ru.terra.lorview.parser.ParsersFactory;
@@ -29,8 +30,11 @@ public class LoadTests extends TestCase {
     public void test1() throws ParserException, ParseException {
         Parser parser = ParsersFactory.getParser();
         parser.start();
-        for (ForumItemDTO forumItemDTO : parser.loadForum("general")) {
+        for (ForumItemDTO forumItemDTO : parser.loadForum("general", false)) {
             logger.info("Loaded " + forumItemDTO);
+        }
+        for (TrackerItemDTO trackerItemDTO : parser.loadTracker()) {
+            logger.info("Loaded " + trackerItemDTO);
         }
         parser.close();
     }
